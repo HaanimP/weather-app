@@ -9,25 +9,22 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            height: 100vh; /* Set height to viewport height */
-            background-image: url('https://i.ibb.co/F0tgx81/cloudy-weather-digital-illustration-hi16vkc00cp99uzv.jpg" ');
-            background-size: 100% auto; /* Automatically fit width, maintain aspect ratio */
+            height: 100vh; 
+            background-image: url('https://i.ibb.co/F0tgx81/cloudy-weather-digital-illustration-hi16vkc00cp99uzv.jpg');
+            background-size: cover;
             background-position: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }        
+        }
         .container {
-            margin-top: 5%;
-            width: 50%;
+            margin-top: 3% !important;
+            width: 60%;
             align-items:center;
             text-align: center;
             background-color: rgba(255, 255, 255, 0.2); 
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px; 
+            margin: 0 auto; /* Center horizontally */
+            margin-bottom: 20px;
         }
         .forecast-container {
             width: auto;
@@ -36,6 +33,7 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
         h1 {
             margin-bottom: 20px;
@@ -91,11 +89,16 @@
 
         @media (max-width: 600px) {
             body {
-                padding: 10px;
-                height: auto;
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                height: 100vh; 
+                background-image: url('https://i.ibb.co/3MfbjFm/HD-wallpaper-spring-clouds-green-hill-natural-nature-spring-weather-tree.jpg');
+                background-size: cover;
+                background-position: center;
             }
             .container, .forecast-container {
-                width: 100%;
+                width: auto;
                 margin: 10px 0;
                 padding: 15px;
             }
@@ -129,6 +132,45 @@
                 gap: 10px;
             }
         }
+
+        @media (min-width: 601px) and (max-width: 768px) {
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                height: 100vh; 
+                background-image: url('https://i.ibb.co/T1Cg6GG/images-1.jpg');
+                background-size: cover;
+                background-position: center;
+            }
+            .container {
+                width: auto;
+                margin: 10px 0;
+                padding: 15px;
+            }
+            .forecast-container {
+                width: auto;
+                margin: 10px 0;
+                padding: 15px;
+            }
+            input[type="text"] {
+                font-size: 16px;
+            }
+            button {
+                font-size: 16px;
+            }
+            p {
+                font-size: 18px;
+            }
+            .forecast {
+                margin-top: 20px;
+                display: flex;
+                width: auto;
+                height: auto;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -144,6 +186,16 @@
     </div>
 
     <script>
+        function expandContainers() {
+            var container = document.querySelector('.container');
+            var forecastContainer = document.querySelector('.forecast-container');
+            container.style.width = '80%'; // Adjust width as needed
+            forecastContainer.style.width = '80%'; // Adjust width as needed
+            container.style.marginTop = '50px'; // Adjust top margin as needed
+            forecastContainer.style.marginBottom = '50px'; // Adjust bottom margin as needed
+        }
+
+
         function getWeather() {
             fetchWeather();
             setInterval(fetchWeather, 60000); // Fetch weather every minute
