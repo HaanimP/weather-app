@@ -9,32 +9,33 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            height: 100vh;
-            background-color: #87CEEB;
-        }
+            height: 100vh; /* Set height to viewport height */
+            background-image: url('https://i.ibb.co/F0tgx81/cloudy-weather-digital-illustration-hi16vkc00cp99uzv.jpg" ');
+            background-size: 100% auto; /* Automatically fit width, maintain aspect ratio */
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }        
         .container {
+            margin-top: 5%;
+            width: 50%;
+            align-items:center;
             text-align: center;
             background-color: rgba(255, 255, 255, 0.2); 
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px; 
-            margin-right: 20px;
+            margin-bottom: 20px; 
         }
         .forecast-container {
-            text-align: center;
+            width: auto;
             background-color: transparent; 
             backdrop-filter: blur(4px);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px; 
         }
         h1 {
             margin-bottom: 20px;
@@ -42,7 +43,7 @@
         }
         input[type="text"] {
             padding: 10px;
-            width: 200px;
+            width: calc(100% - 22px);
             border: 1px solid #ccc;
             border-radius: 5px;
             margin-bottom: 10px;
@@ -56,12 +57,13 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            width: 100%;
         }
         button:hover {
             background-color: #45a049;
         }
         #currentWeatherInfo, #forecastInfo {
-            text-align: left;
+            text-align: center;
             margin-top: 20px;
         }
         p {
@@ -71,16 +73,61 @@
         .forecast {
             margin-top: 20px;
             display: flex;
-            justify-content: space-around;
+            width: auto;
+            height: auto;
+            flex-direction: row;
+            gap: 10px;
         }
         .forecast .day {
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.5);
         }
         .weather-icon {
             width: 50px;
             height: 50px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+                height: auto;
+            }
+            .container, .forecast-container {
+                width: 100%;
+                margin: 10px 0;
+                padding: 15px;
+            }
+            input[type="text"] {
+                width: calc(100% - 22px);
+                font-size: 14px;
+            }
+            button {
+                font-size: 14px;
+            }
+            p {
+                font-size: 16px;
+            }
+            #currentWeatherInfo, #forecastInfo {
+                text-align: center;
+                margin-top: 20px;
+            }
+            .forecast .day {
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background-color: rgba(255, 255, 255, 0.5);
+            }
+
+            .forecast {
+                margin-top: 20px;
+                display: flex;
+                width: auto;
+                height: auto;
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
