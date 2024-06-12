@@ -203,8 +203,8 @@
 
         function fetchWeather() {
             var city = document.getElementById("cityInput").value;
-            var url = `http://localhost:5000/weather?city=${encodeURIComponent(city)}`;
-
+            var url = 'https://weather-app-wqds.onrender.com/weather?city=' + encodeURIComponent(city);
+        
             fetch(url)
                 .then(response => {
                     if (!response.ok) {
